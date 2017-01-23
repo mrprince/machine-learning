@@ -11,6 +11,7 @@ for i in range(len(iris.target)):
         print("Example:%d lable %s feature %s"%(i,iris.target[i],iris.data[i])) 
         
 test_index = [0,50,100]
+
 # training data
 train_target = np.delete(iris.target,test_index)
 train_data = np.delete(iris.data,test_index,axis=0)
@@ -26,7 +27,6 @@ print(test_target)
 print(clf.predict(test_data))
 
 # viz code
-
 import pydotplus 
 dot_data = tree.export_graphviz(clf, out_file=None, 
                          feature_names=iris.feature_names,  
